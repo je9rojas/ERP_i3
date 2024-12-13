@@ -1,0 +1,65 @@
+const express = require('express'); // Si estás usando un servidor web
+const { MongoClient, ServerApiVersion } = require('mongodb');
+
+// Configuración de la conexión a MongoDB
+const uri = "mongodb+srv://erp_user:G5EzQRLCqIy2JvSH@clustererp.j2dmr.mongodb.net/?retryWrites=true&w=majority&appName=ClusterERP";
+
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  },
+});
+
+let db; // Variable para almacenar la instancia de la base de datos
+
+async function connectToDatabase() {
+  try {
+    // Conectar al servidor MongoDB
+    await client.connect();
+    console.log("Conectado exitosamente a MongoDB!");
+
+    // Seleccionar la base de datos
+    db = client.db("ERP_i3");
+  } catch (error) {
+    console.error("Error al conectar con MongoDB:", error);
+    process.exit(1); // Salir de la aplicación en caso de error crítico
+  }
+}
+
+// Iniciar la conexión
+connectToDatabase();
+
+// Configuración del servidor (opcional si usas Express)
+const app = express();
+app.use(express.json()); // Middleware para manejar JSON
+
+// Endpoint de ejemplo para interactuar con MongoDB
+app.get('/api/compras', async (req, res) => {
+  try {
+    const compras = await db.collection('compras').find().toArray();
+    res.status(200).json(compras);
+  } catch (error) {
+    console.error("Error al obtener las compras:", error);
+    res.status(500).json({ error: "Error al obtener las compras" });
+  }
+});
+
+// Otro ejemplo: Insertar compras
+app.post('/api/compras', async (req, res) => {
+  try {
+    const nuevaCompra = req.body;
+    const resultado = await db.collection('compras').insertOne(nuevaCompra);
+    res.status(201).json({ id: resultado.insertedId });
+  } catch (error) {
+    console.error("Error al insertar la compra:", error);
+    res.status(500).json({ error: "Error al insertar la compra" });
+  }
+});
+
+// Configurar el puerto del servidor
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+});

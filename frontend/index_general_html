@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - ERP_i3</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="dashboard-container">
+    <aside id="sidebar">
+      <h2>ERP_i3</h2>
+      <nav>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Inventario</a></li>
+          <li><a href="#">Ventas</a></li>
+          <li><a href="#">Compras</a></li>
+          <li><a href="#">Usuarios</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main id="main-content">
+      <header>
+        <h1>Bienvenido al Dashboard</h1>
+        <input type="text" placeholder="Buscar..." id="search-bar">
+      </header>
+
+      <section id="stats-overview">
+        <div class="stat-box">Inventario: <strong>100</
+
+
+
+          
+<!--
+ERP_i3/
+├── frontend/
+│   ├── css/           # Para archivos CSS opcionales
+│   ├── js/            # Para scripts JavaScript
+│   ├── assets/        # Para imágenes, íconos u otros recursos
+│   ├── index.html     # Página inicial del dashboard
+│   ├── components/    # Componentes HTML reutilizables (opcional)
+│   ├── utils/         # Funciones JavaScript auxiliares (opcional)
+          
+
+
+ERP_i3/
+├── frontend/
+│   ├── models/          # Lógica relacionada con los datos (JavaScript para manejar datos del front)
+│   ├── views/           # HTML y plantillas de la interfaz de usuario
+│   ├── controllers/     # Controladores (JavaScript para manejar la lógica de la interacción)
+│   ├── assets/          # Recursos como imágenes, íconos, estilos, etc.
+│   │   ├── css/         # Archivos CSS opcionales para el diseño
+│   │   ├── images/      # Archivos de imágenes (logos, íconos, etc.)
+│   ├── index.html       # Página inicial del dashboard
+
+
+MongoDB
+
+    //mongoURI: "mongodb+srv://erp_user:<password>@cluster0.mongodb.net/ERP_i3?retryWrites=true&w=majority",
+
+
+erp_user
+G5EzQRLCqIy2JvSH
+mongodb+srv://erp_user:G5EzQRLCqIy2JvSH@clustererp.j2dmr.mongodb.net/?retryWrites=true&w=majority&appName=ClusterERP
+
+
+mongodb+srv://erp_user:<db_password>@clustererp.j2dmr.mongodb.net/?retryWrites=true&w=majority&appName=ClusterERP
+
+
+Explicación de las carpetas
+models/: Archivos JavaScript para manejar datos, como dashboardModel.js.
+views/: Archivos HTML que contienen las plantillas de la interfaz.
+controllers/: Archivos JavaScript que manejan la lógica de las interacciones y vinculan la vista con los datos.
+assets/: Recursos estáticos como imágenes y estilos CSS.
+Con esta estructura, tienes un inicio sólido y organizado bajo el patrón MVC para tu ERP. 🚀
+
+
+ERP_i3/
+├── frontend/                    # Interfaz del usuario
+│   ├── models/                  # Lógica de datos del frontend
+│   │   ├── purchaseModel.js     # Definición de los datos de compras
+│   ├── views/                   # Plantillas HTML y diseño
+│   │   ├── purchases.html       # Página del formulario de compras
+│   ├── controllers/             # Lógica de interacción del frontend
+│   │   ├── purchaseController.js # Controlador para manejar la lógica de compras
+│   ├── assets/                  # Recursos como estilos e imágenes
+│   │   ├── css/
+│   │   │   ├── style.css        # Hoja de estilos para la interfaz
+│   │   ├── images/              # Íconos e imágenes
+│   ├── index.html               # Página principal con enlace a "Compras"
+├── backend/                     # Microservicio para Compras
+│   ├── routes/                  # Definición de las rutas del API
+│   │   ├── purchases.js         # Ruta para manejar solicitudes relacionadas con compras
+│   ├── models/                  # Modelos para la base de datos
+│   │   ├── Purchase.js          # Definición del esquema de compras en MongoDB
+│   ├── controllers/             # Controladores del backend
+│   │   ├── purchaseController.js # Lógica para manejar las solicitudes de la API
+│   ├── app.js                   # Configuración del servidor y conexión a MongoDB
+│   ├── config.js                # Configuración de MongoDB Atlas y variables de entorno
+│   ├── package.json             # Dependencias del backend
+
+
+-->
+
+
+
