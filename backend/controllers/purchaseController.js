@@ -1,23 +1,23 @@
-exports.getPurchases = async (req, res) => {
-    try {
-      const db = req.app.locals.db;
-      const purchases = await db.collection('compras').find().toArray();
-      res.status(200).json(purchases);
-    } catch (error) {
-      console.error("Error al obtener las compras:", error);
-      res.status(500).json({ error: "Error al obtener las compras" });
-    }
-  };
-  
-  exports.createPurchase = async (req, res) => {
-    try {
-      const db = req.app.locals.db;
-      const newPurchase = req.body;
-      const result = await db.collection('compras').insertOne(newPurchase);
-      res.status(201).json({ id: result.insertedId });
-    } catch (error) {
-      console.error("Error al insertar la compra:", error);
-      res.status(500).json({ error: "Error al insertar la compra" });
-    }
-  };
-  
+const addPurchase = async (req, res) => {
+  try {
+    console.log('Inicio de addPurchase');
+    console.log('Datos recibidos:', req.body);
+
+    const db = req.app.locals.db;
+    if (!db) throw new Error('No se pudo acceder a la base de datos.');
+
+    const collection = db.collection('purchases');
+    if (!collection) throw new Error('No se pudo acceder a la colección purchases.');
+
+    const result = await collection.insertOne(req.body);
+    if (!result.insertedId) throw new Error('No se pudo insertar el documento.');
+
+    console.log('Documento insertado con éxito:', result.insertedId);
+    res.status(201).json({ message: 'Compra guardada exitosamente', id: result.insertedId });
+  } catch (error) {
+    console.error('Error detallado:', error.message);
+    res.status(500).json({ error: 'Error al guardar la compra', details: error.message });
+  }
+};
+
+module.exports = { addPurchase };

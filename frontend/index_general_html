@@ -102,6 +102,15 @@ ERP_i3/
 │   ├── package.json             # Dependencias del backend
 
 
+
+continuando con el proyecto ERP_i3 se debe almacenar los siguientes datos en la base de datos Mongodb Atlas:
+codigo, tipo de producto, marca, 
+
+Mostrar los archivos completos que deben cambiarse
+Nota: usar nomenclatura en ingles
+
+
+
 -->
 
 

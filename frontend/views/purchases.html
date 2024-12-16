@@ -4,62 +4,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Compras</title>
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <script src="../controllers/purchaseController.js" defer></script>
+  <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-  <h1>Sección de Compras</h1>
+  <h1>Formulario de Compras</h1>
   <form id="purchaseForm">
-    <label for="producto">Producto:</label>
-    <input type="text" id="producto" name="producto" required>
+    <label for="item">Item:</label>
+    <input type="text" id="item" name="item" required>
+    <br>
     <label for="cantidad">Cantidad:</label>
     <input type="number" id="cantidad" name="cantidad" required>
+    <br>
     <label for="precio">Precio:</label>
     <input type="number" id="precio" name="precio" required>
-    <button type="submit">Agregar Compra</button>
+    <br>
+    <button type="submit">Enviar</button>
   </form>
-  <h2>Lista de Compras</h2>
-  <ul id="purchaseList"></ul>
+  <script src="/models/purchaseModel.js"></script>
 </body>
 </html>
 
 
 
+
+
+
+
+
+
 <!--
 
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compras - ERP_i3</title>
+    <title>Registrar Compra</title>
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Compras</h1>
-    </header>
-    <main>
-        <section id="form-section">
-            <h2>Registrar una Compra</h2>
-            <form id="purchase-form">
-                <label for="item">Artículo:</label>
-                <input type="text" id="item" name="item" required>
-                
-                <label for="quantity">Cantidad:</label>
-                <input type="number" id="quantity" name="quantity" required>
-                
-                <label for="price">Precio:</label>
-                <input type="number" id="price" name="price" required>
-                
-                <button type="submit">Guardar Compra</button>
-            </form>
-        </section>
-        <section id="list-section">
-            <h2>Lista de Compras</h2>
-            <ul id="purchase-list"></ul>
-        </section>
-    </main>
+    <h1>Registrar Compra</h1>
+    <form id="purchase-form">
+        <label for="codigo">Código:</label>
+        <input type="text" id="codigo" name="codigo" required />
+        <br />
+
+        <label for="tipo">Tipo de Producto:</label>
+        <input type="text" id="tipo" name="tipo" required />
+        <br />
+
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" name="precio" required />
+        <br />
+
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" name="cantidad" required />
+        <br />
+
+        <button type="submit">Registrar Compra</button>
+    </form>
     <script src="../controllers/purchaseController.js"></script>
 </body>
 </html>
