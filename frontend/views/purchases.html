@@ -3,71 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Compras</title>
+  <title>Formulario de Compras</title>
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
   <h1>Formulario de Compras</h1>
+  <!-- Formulario de compras -->
   <form id="purchaseForm">
-    <label for="item">Item:</label>
-    <input type="text" id="item" name="item" required>
+    <label for="code">Product Code:</label>
+    <input type="text" id="code" name="code" required>
     <br>
-    <label for="cantidad">Cantidad:</label>
-    <input type="number" id="cantidad" name="cantidad" required>
+
+    <label for="productType">Product Type:</label>
+    <input type="text" id="productType" name="productType" required>
     <br>
-    <label for="precio">Precio:</label>
-    <input type="number" id="precio" name="precio" required>
+
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" required>
     <br>
-    <button type="submit">Enviar</button>
+
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" required>
+    <br>
+
+    <label for="purchaseDate">Purchase Date:</label>
+    <input type="date" id="purchaseDate" name="purchaseDate" required>
+    <br>
+
+    <button type="submit">Submit</button>
   </form>
+
+  <!-- Script que maneja la lógica -->
   <script src="/models/purchaseModel.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-<!--
-
-
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrar Compra</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-</head>
-<body>
-    <h1>Registrar Compra</h1>
-    <form id="purchase-form">
-        <label for="codigo">Código:</label>
-        <input type="text" id="codigo" name="codigo" required />
-        <br />
-
-        <label for="tipo">Tipo de Producto:</label>
-        <input type="text" id="tipo" name="tipo" required />
-        <br />
-
-        <label for="precio">Precio:</label>
-        <input type="number" id="precio" name="precio" required />
-        <br />
-
-        <label for="cantidad">Cantidad:</label>
-        <input type="number" id="cantidad" name="cantidad" required />
-        <br />
-
-        <button type="submit">Registrar Compra</button>
-    </form>
-    <script src="../controllers/purchaseController.js"></script>
-</body>
-</html>
-
-
--->
