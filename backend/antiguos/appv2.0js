@@ -1,8 +1,0 @@
-const mongoose = require("mongoose");
-const mongoURI = "mongodb+srv://erp_user:G5EzQRLCqIy2JvSH@cluster0.mongodb.net/ERP_i3?retryWrites=true&w=majority";
-
-// Conectar a MongoDB
-mongoose
-    .connect(mongoURI)
-    .then(() => console.log("Conexión exitosa a MongoDB Atlas"))
-    .catch((err) => console.error("Error al conectar con MongoDB Atlas:", err));
